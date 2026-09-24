@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <style>
+        body { background: #111; color: #fff; font-family: Arial; margin: 0; padding: 40px; }
+        h1 { text-align: center; margin-bottom: 20px; }
+        form { max-width: 500px; margin: 0 auto; }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: none;
+            background: #333;
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #555;
+            color: #fff;
+            width: 100%;
+        }
+        .button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            <!-- margin: 20px 10px; -->
+            margin : 0 auto;
+        }
+         .button1 {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+        }
+        .buttons { text-align: center; }
+    </style>
+</head>
+    
+<body>
+    <h1>Contact</h1>
+    <p style="text-align: center;">Laissez votre message :</p>
+
+    <form action="https://formspree.io/f/xvzwboyd" method="POST">
+        <input type="hidden" name="_next" value="contact.html?status=success">
+        <input type="hidden" name="_error" value="contact.html?status=error">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+
+
+        
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('status') === 'success') {
+            alert('Message envoyé avec succès !');
+        } else if (urlParams.get('status') === 'error') {
+            alert('Erreur lors de l\'envoi du message.');
+        }
+    </script>
+
+</body>
+    
+
+<footer>
+
+    <a href="index.html" class="button1">Retour à l'accueil</a>
+    
+</footer>
+</html>
